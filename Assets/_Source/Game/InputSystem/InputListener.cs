@@ -44,11 +44,12 @@ namespace Game.InputSystem
         }
         private void ReadJumpInput()
         {
-            if (IsGrounded(_playerCopy.Rb, _playerCopy.Transform))
+            if (IsGrounded(_playerCopy.Rb, _playerCopy.Transform) || (player.JumpAmounts < 2 && player.FormID == 1))
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
                     _playerInvoker.InvokeJump();
+                    player.JumpAmounts++;
             }
         }
         private void ReadChangeFormInput()
@@ -56,6 +57,10 @@ namespace Game.InputSystem
             if (Input.GetKeyDown(KeyCode.F))
             {
                 _playerInvoker.InvokeChangeForm(playerFormView);
+                if (player.FormID == 2)
+                {
+                    // TODO player hitbox collider is split by half
+                }
             }
         }
         private bool IsGrounded(Rigidbody2D rb, Transform transform)
@@ -67,6 +72,7 @@ namespace Game.InputSystem
             if (hit.collider != null)
             {
                 _isGround = true;
+                player.JumpAmounts = 0;
                 return _isGround;
             }
             else
