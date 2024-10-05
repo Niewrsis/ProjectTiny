@@ -7,7 +7,7 @@ namespace Game.InputSystem
     {
         [Header("References")]
         [SerializeField] private Player player;
-
+        
         private PlayerInvoker _playerInvoker;
 
         private void Awake()
@@ -17,6 +17,7 @@ namespace Game.InputSystem
         private void FixedUpdate()
         {
             ReadMoveInputs();
+            ReadChangeFormInput();
         }
         private void ReadMoveInputs()
         {
@@ -24,6 +25,13 @@ namespace Game.InputSystem
             {
                 float xMove = Input.GetAxis("Horizontal");
                 _playerInvoker.InvokeMove(xMove);
+            }
+        }
+        private void ReadChangeFormInput()
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                _playerInvoker.InvokeChangeForm();
             }
         }
     }
