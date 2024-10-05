@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game.PlayerSystem
 {
-    public class PlayerMovement : MonoBehaviour
+    public class PlayerMovement
     {
         public void Move(Rigidbody2D rb, float moveSpeed, float xMove)
         {
