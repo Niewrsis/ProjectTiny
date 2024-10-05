@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game.PlayerSystem
@@ -8,7 +6,11 @@ namespace Game.PlayerSystem
     {
         public void Move(Rigidbody2D rb, float moveSpeed, float xMove)
         {
-            rb.velocity = new Vector2(xMove, 0) * moveSpeed;
+            rb.velocity = new Vector2(xMove * moveSpeed, rb.velocity.y);
+        }
+        public void Jump(Rigidbody2D rb, float jumpForce)
+        {
+            rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
         }
     }
 }
