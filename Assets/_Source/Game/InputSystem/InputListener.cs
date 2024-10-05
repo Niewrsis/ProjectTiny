@@ -1,4 +1,5 @@
 using Game.PlayerSystem;
+using Game.PlayerSystem.View;
 using UnityEngine;
 
 namespace Game.InputSystem
@@ -7,10 +8,12 @@ namespace Game.InputSystem
     {
         [Header("References")]
         [SerializeField] private Player player;
+        [SerializeField] private PlayerFormChangingView playerFormView;
 
         private PlayerInvoker _playerInvoker;
         private Player _playerCopy;
         private bool _isGround;
+        private bool _isMoving;
 
         private void Awake()
         {
@@ -31,11 +34,13 @@ namespace Game.InputSystem
         }
         private void ReadMoveInputs()
         {
+            _isMoving = false;
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
             {
-                float xMove = Input.GetAxis("Horizontal");
-                _playerInvoker.InvokeMove(xMove);
+                _isMoving = true;
             }
+            float xMove = Input.GetAxis("Horizontal");
+            _playerInvoker.InvokeMove(xMove, _isMoving);
         }
         private void ReadJumpInput()
         {
@@ -50,7 +55,7 @@ namespace Game.InputSystem
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
-                _playerInvoker.InvokeChangeForm();
+                _playerInvoker.InvokeChangeForm(playerFormView);
             }
         }
         private bool IsGrounded(Rigidbody2D rb, Transform transform)
@@ -62,13 +67,11 @@ namespace Game.InputSystem
             if (hit.collider != null)
             {
                 _isGround = true;
-                Debug.Log(_isGround);
                 return _isGround;
             }
             else
             {
                 _isGround = false;
-                Debug.Log(_isGround);
                 return _isGround;
             }
         }
