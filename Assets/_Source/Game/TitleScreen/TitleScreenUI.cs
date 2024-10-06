@@ -21,8 +21,8 @@ public class TitleScreenUI : MonoBehaviour
 
     public void StartGame() 
     {
-        SceneManager.LoadScene("SampleScene");
-        Debug.Log("please know that TitleScreenUI leads to SampleScene");
+        SceneManager.LoadScene("Scene1");
+        Debug.Log("idk where the hell is tutorial so i teleport you to first level");
     }
 
     public void Settings()

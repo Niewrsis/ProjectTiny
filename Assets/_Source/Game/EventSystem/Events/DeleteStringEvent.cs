@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 
-[CreateAssetMenu(fileName = "SaveString", menuName = "Events/SaveString")]
+[CreateAssetMenu(fileName = "DeleteString", menuName = "Events/DeleteString")]
 public class DeleteStringEvent : Event
 {
     public string key;
