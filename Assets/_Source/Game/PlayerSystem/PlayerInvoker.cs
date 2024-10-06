@@ -27,6 +27,10 @@ namespace Game.PlayerSystem
         {
             _playerForm.ChangeNextForm(_player.PlayerSR, _player, playerFormView);
         }
+        public void InvokeJumpDown(Player player)
+        {
+            _playerMovement.JumpDown(player);
+        }
         public Player GetPlayer()
         {
             return _player;

@@ -27,10 +27,21 @@ namespace Game.InputSystem
         {
             ReadChangeFormInput();
             ReadJumpInput();
+            ReadJumpDownInput();
         }
         private void FixedUpdate()
         {
             ReadMoveInputs();
+        }
+        private void ReadJumpDownInput()
+        {
+            if (Input.GetKey(KeyCode.S))
+            {
+            _playerInvoker.InvokeJumpDown(player);
+            } else
+            {
+                _playerCopy.isTryingToJumpDown = false; // todo either make it better or just forget about it and cry aobut it later
+            }
         }
         private void ReadMoveInputs()
         {

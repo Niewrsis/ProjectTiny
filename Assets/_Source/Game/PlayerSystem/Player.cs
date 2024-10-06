@@ -12,6 +12,7 @@ namespace Game.PlayerSystem
         [field: SerializeField] public float JumpForce { get; private set; }
         [HideInInspector] public int FormID;
         [HideInInspector] public int JumpAmounts;
+        [HideInInspector] public bool isTryingToJumpDown;
 
         private Rigidbody2D _rb;
         private Transform _transform;

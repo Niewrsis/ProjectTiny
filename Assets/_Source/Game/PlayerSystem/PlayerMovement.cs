@@ -13,5 +13,9 @@ namespace Game.PlayerSystem
         {
             rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
         }
+        public void JumpDown(Player player)
+        {
+            player.isTryingToJumpDown = true;
+        }
     }
 }
