@@ -31,6 +31,10 @@ namespace Game.PlayerSystem
         {
             _playerMovement.JumpDown(player);
         }
+        public void InvokeDie(Player player)
+        {
+            
+        }
         public Player GetPlayer()
         {
             return _player;

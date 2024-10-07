@@ -1,3 +1,4 @@
+using Game.PlayerSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,8 @@ namespace Game.WaterSystem {
         public float TargetYLevel;
         public float TimeToRise = 60f; // Default time to rise
         private float waterRiseSpeed;
+
+        public GameObject DeathScreen;
 
         [Range(0, 5)] public float waveAmplitude = 0.1f;
         [Range(0, 5)] public float waveSpeed = 1.0f;
@@ -48,7 +51,14 @@ namespace Game.WaterSystem {
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                Debug.Log("player is supposed to die but no function to die exists yet, so i'm logging this instead");
+                collision.gameObject.GetComponent<Player>().IsDead = true;
+                if (DeathScreen != null)
+                {
+                    DeathScreen.SetActive(true);
+                } else
+                {
+                    Debug.LogError("Why the uck did you not set a death screen plaeese fucking od smth bout it");
+                }
             }
         }  
     }

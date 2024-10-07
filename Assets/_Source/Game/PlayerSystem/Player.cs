@@ -13,6 +13,7 @@ namespace Game.PlayerSystem
         [HideInInspector] public int FormID;
         [HideInInspector] public int JumpAmounts;
         [HideInInspector] public bool isTryingToJumpDown;
+        [HideInInspector] public bool IsDead;
 
         private Rigidbody2D _rb;
         private Transform _transform;
@@ -25,6 +26,21 @@ namespace Game.PlayerSystem
             _playerSR = GetComponent<SpriteRenderer>();
             _transform = GetComponent<Transform>();
             _rb = GetComponent<Rigidbody2D>();
+        }
+
+        public void DIE()
+        {
+            // sjitcode 'ere i come
+
+            MovementSpeed = 0;
+            JumpForce = 0;
+            IsDead = true;
+
+            StartCoroutine(nameof(DeathCutscene));
+        }
+        private IEnumerator DeathCutscene()
+        {
+            yield break; ;
         }
     }
 }
