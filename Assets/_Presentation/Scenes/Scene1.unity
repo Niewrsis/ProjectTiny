@@ -44507,11 +44507,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 472800358689710309, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.5
+      value: -2.6
       objectReference: {fileID: 0}
     - target: {fileID: 472800358689710309, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.64
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 472800358689710309, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
       propertyPath: m_LocalPosition.z

@@ -46,5 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _formAnimations:
   - {fileID: 9100000, guid: 1d0b239350089aa48aab3ccab7a38826, type: 2}
-  - {fileID: 9100000, guid: e90f526dda9e3524e857677a7d778cdf, type: 2}
-  - {fileID: 9100000, guid: d7a1168cd9ea81041ad8847a6db74908, type: 2}
+  - {fileID: 9100000, guid: e15288c3f29ab864e8dd6b10a3774096, type: 2}
+  - {fileID: 9100000, guid: e15288c3f29ab864e8dd6b10a3774096, type: 2}

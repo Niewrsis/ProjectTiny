@@ -58,6 +58,7 @@ namespace Game.InputSystem
             _isMoving = false;
             float xMove = Input.GetAxis("Horizontal");
             _playerCopy.Anim.SetFloat("horizontalSpeed", Mathf.Abs(_playerCopy.Rb.velocity.x));
+            _playerCopy.Anim.SetFloat("verticalSpeed", _playerCopy.Rb.velocity.y);
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
             {
                 _isMoving = true;
@@ -74,7 +75,7 @@ namespace Game.InputSystem
         }
         private void ReadJumpInput()
         {
-            if (player.FormID == 0  || player.FormID == 2) return;
+            // if (player.FormID == 0  || player.FormID == 2) return;
 
             if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
             {
