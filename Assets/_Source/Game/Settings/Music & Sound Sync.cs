@@ -10,7 +10,16 @@ public class MusicSoundSync : MonoBehaviour
     void Start()
     {
         if (follow)
-        DontDestroyOnLoad(musicobject);
+        {
+            var test = GameObject.Find(musicobject.name);
+            if (test == musicobject)
+            {
+                DontDestroyOnLoad(musicobject);
+            } else
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 
     // Update is called once per frame
