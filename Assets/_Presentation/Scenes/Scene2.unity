@@ -1695,6 +1695,24 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1288664457 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7956132101223737986, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
+  m_PrefabInstance: {fileID: 2116273309}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1288664461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288664457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2778c0b182f7b9449b611a418aac9264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsPlayerGrounded: 0
 --- !u!1 &1424952014
 GameObject:
   m_ObjectHideFlags: 0
@@ -4413,12 +4431,6 @@ CompositeCollider2D:
       - X: 0
         Y: 180000000
       - X: 0
-        Y: 175859376
-      - X: -10000000
-        Y: 175859376
-      - X: -10000000
-        Y: 170039056
-      - X: -9960938
         Y: 170000000
       - X: -10000000
         Y: 170000000
@@ -5358,17 +5370,17 @@ CompositeCollider2D:
         Y: 250039056
       - X: -79960936
         Y: 250000000
-    - - X: -50000000
-        Y: 240000000
-      - X: -50000000
-        Y: 240039056
-      - X: -49960936
-        Y: 240000000
     - - X: -60000000
         Y: 240000000
       - X: -60000000
         Y: 240039056
       - X: -59960936
+        Y: 240000000
+    - - X: -50000000
+        Y: 240000000
+      - X: -50000000
+        Y: 240039056
+      - X: -49960936
         Y: 240000000
     - - X: -40000000
         Y: 230000000
@@ -5382,17 +5394,17 @@ CompositeCollider2D:
         Y: 230039056
       - X: -29960938
         Y: 230000000
-    - - X: -10000000
-        Y: 220000000
-      - X: -10000000
-        Y: 220039056
-      - X: -9960938
-        Y: 220000000
     - - X: -20000000
         Y: 220000000
       - X: -20000000
         Y: 220039056
       - X: -19960938
+        Y: 220000000
+    - - X: -10000000
+        Y: 220000000
+      - X: -10000000
+        Y: 220039056
+      - X: -9960938
         Y: 220000000
     - - X: 30000000
         Y: 190000000
@@ -5424,23 +5436,11 @@ CompositeCollider2D:
         Y: 130039064
       - X: 10039062
         Y: 130000000
-    - - X: -30000000
+    - - X: -60000000
         Y: 120000000
-      - X: -30000000
+      - X: -60000000
         Y: 120039064
-      - X: -29960938
-        Y: 120000000
-    - - X: -20000000
-        Y: 120000000
-      - X: -20000000
-        Y: 120039064
-      - X: -19960938
-        Y: 120000000
-    - - X: -10000000
-        Y: 120000000
-      - X: -10000000
-        Y: 120039064
-      - X: -9960938
+      - X: -59960936
         Y: 120000000
     - - X: -40000000
         Y: 120000000
@@ -5448,17 +5448,29 @@ CompositeCollider2D:
         Y: 120039064
       - X: -39960936
         Y: 120000000
+    - - X: -10000000
+        Y: 120000000
+      - X: -10000000
+        Y: 120039064
+      - X: -9960938
+        Y: 120000000
+    - - X: -20000000
+        Y: 120000000
+      - X: -20000000
+        Y: 120039064
+      - X: -19960938
+        Y: 120000000
+    - - X: -30000000
+        Y: 120000000
+      - X: -30000000
+        Y: 120039064
+      - X: -29960938
+        Y: 120000000
     - - X: -50000000
         Y: 120000000
       - X: -50000000
         Y: 120039064
       - X: -49960936
-        Y: 120000000
-    - - X: -60000000
-        Y: 120000000
-      - X: -60000000
-        Y: 120039064
-      - X: -59960936
         Y: 120000000
     - - X: -50000000
         Y: 70000000
@@ -6585,10 +6597,7 @@ CompositeCollider2D:
       - {x: 0.0000076, y: 18.003899}
       - {x: 0.0038188, y: 18}
       - {x: 0, y: 17.999971}
-      - {x: -0.0000294, y: 17.585938}
-      - {x: -1, y: 17.585909}
-      - {x: -0.99999243, y: 17.003899}
-      - {x: -0.9961812, y: 17}
+      - {x: -0.0000294, y: 17}
       - {x: -1, y: 16.999971}
       - {x: -0.9999851, y: 16.484367}
       - {x: -0.9218685, y: 16.445312}
@@ -27935,16 +27944,6 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 10
       m_TileSpriteIndex: 19
-      m_TileMatrixIndex: 1
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: -1, y: 17, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 14
-      m_TileSpriteIndex: 23
       m_TileMatrixIndex: 1
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -53320,7 +53319,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 65a6992d916be7045bd928141fcc5760, type: 2}
   - m_RefCount: 37
     m_Data: {fileID: 11400000, guid: 3d14f71582e6fb44bb5825efe3ca3bd8, type: 2}
-  - m_RefCount: 50
+  - m_RefCount: 49
     m_Data: {fileID: 11400000, guid: 773464c356f381540b8f4a047fc1b374, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
@@ -53369,7 +53368,7 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 4fc38a82986daf0478450df9b40a38ed, type: 3}
   - m_RefCount: 37
     m_Data: {fileID: 21300000, guid: 8d368096d1a73244ba391f81017a0a3c, type: 3}
-  - m_RefCount: 50
+  - m_RefCount: 49
     m_Data: {fileID: 21300000, guid: 8315e74c623df9b489a67e458dd547c1, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 0
@@ -53390,7 +53389,7 @@ Tilemap:
       e31: 7.09e-43
       e32: 7.08e-43
       e33: 7.08e-43
-  - m_RefCount: 4600
+  - m_RefCount: 4599
     m_Data:
       e00: 1
       e01: 0
@@ -53409,7 +53408,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 4600
+  - m_RefCount: 4599
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -55279,7 +55278,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7956132101223737986, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1288664461}
   m_SourcePrefab: {fileID: 100100000, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
 --- !u!4 &2116273310 stripped
 Transform:

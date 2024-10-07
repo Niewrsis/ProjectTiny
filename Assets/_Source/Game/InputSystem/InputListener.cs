@@ -10,6 +10,7 @@ namespace Game.InputSystem
         [SerializeField] private Player player;
         [SerializeField] private PlayerFormChangingView playerFormView;
 
+        private IsGroundedPlayer _playerGroundedScript;
         private PlayerInvoker _playerInvoker;
         private Player _playerCopy;
         private bool _isGround;
@@ -22,6 +23,7 @@ namespace Game.InputSystem
         private void Start()
         {
             _playerCopy = _playerInvoker.GetPlayer();
+            _playerGroundedScript = player.GetComponentInChildren<IsGroundedPlayer>();
         }
         private void Update()
         {
@@ -73,7 +75,7 @@ namespace Game.InputSystem
         {
             if (player.FormID == 0  || player.FormID == 2) return;
 
-            if (Input.GetKeyDown(KeyCode.Space) && IsGrounded(player.Rb, player.Transform))
+            if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
             {
                     _playerInvoker.InvokeJump();
             }
@@ -100,23 +102,9 @@ namespace Game.InputSystem
                 }
             }
         }
-        private bool IsGrounded(Rigidbody2D rb, Transform transform)
+        private bool IsGrounded()
         {
-            float rayDistance = transform.localScale.y;
-
-            RaycastHit2D hit = Physics2D.Raycast(rb.position, Vector2.down, rayDistance, LayerMask.GetMask("Ground"));
-
-            if (hit.collider != null)
-            {
-                _isGround = true;
-                player.JumpAmounts = 0;
-                return _isGround;
-            }
-            else
-            {
-                _isGround = false;
-                return _isGround;
-            }
+            return _playerGroundedScript.IsPlayerGrounded;
         }
     }
 }
