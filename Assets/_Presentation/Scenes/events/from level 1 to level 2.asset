@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: from level 1 to level 2
   m_EditorClassIdentifier: 
   eventIsBusy: 0
-  nameOfScene: 
+  nameOfScene: Scene2
   idOfScene: -1
