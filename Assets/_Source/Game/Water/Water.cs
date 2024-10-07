@@ -22,12 +22,11 @@ namespace Game.WaterSystem {
         private void Start()
         {
             _currentWaterLevel = transform.position.y;
+            waterRiseSpeed = (TargetYLevel - _currentWaterLevel) / TimeToRise;
         }
 
         private void LateUpdate()
         {
-            waterRiseSpeed = (TargetYLevel - _currentWaterLevel) / TimeToRise;
-
             Rise();
 
             Wave();

@@ -39194,9 +39194,9 @@ MonoBehaviour:
   TargetYLevel: 6.15
   TimeToRise: 60
   DeathScreen: {fileID: 2098418305}
-  waveAmplitude: 0.1
-  waveSpeed: 1
-  waveFrequency: 1
+  waveAmplitude: 1.01
+  waveSpeed: 1.92
+  waveFrequency: 1.54
 --- !u!212 &920107217
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -43746,33 +43746,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -2462388597812466604, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
-      propertyPath: <JumpForce>k__BackingField
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 216235518966596416, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 472800358689710309, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.56495655
-      objectReference: {fileID: 0}
-    - target: {fileID: 472800358689710309, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.60015315
-      objectReference: {fileID: 0}
-    - target: {fileID: 472800358689710309, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 472800358689710309, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.4501
+      value: 18.8
       objectReference: {fileID: 0}
     - target: {fileID: 472800358689710309, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.6338
+      value: 37.5
       objectReference: {fileID: 0}
     - target: {fileID: 472800358689710309, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -43806,61 +43786,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 978415892539975130, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 978415892539975130, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
-      propertyPath: m_FlipY
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 978415892539975130, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: dd02b99dc59bc5e45b6445f334e848ed, type: 3}
     - target: {fileID: 980296826267638203, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 980296826267638203, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 980296826267638203, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 9137382523171074122, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
-      propertyPath: m_Size.y
-      value: 2.320041
-      objectReference: {fileID: 0}
-    - target: {fileID: 9137382523171074122, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.014979482
-      objectReference: {fileID: 0}
-    - target: {fileID: 9137382523171074122, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
-      propertyPath: m_SpriteTilingProperty.border.w
-      value: 0.71999997
-      objectReference: {fileID: 0}
-    - target: {fileID: 9137382523171074122, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
-      propertyPath: m_SpriteTilingProperty.border.x
-      value: 0.37
-      objectReference: {fileID: 0}
-    - target: {fileID: 9137382523171074122, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
-      propertyPath: m_SpriteTilingProperty.border.y
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 9137382523171074122, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
-      propertyPath: m_SpriteTilingProperty.border.z
-      value: 0.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 9137382523171074122, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 9137382523171074122, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 2.28
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
