@@ -63,6 +63,7 @@ namespace Game.InputSystem
         }
         private void ReadJumpInput()
         {
+            if (player.FormID == 0) return;
             if (IsGrounded(_playerCopy.Rb, _playerCopy.Transform) || (player.JumpAmounts < 2 && player.FormID == 1))
 
             if (Input.GetKeyDown(KeyCode.Space))

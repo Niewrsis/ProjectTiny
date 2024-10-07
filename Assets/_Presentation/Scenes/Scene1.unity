@@ -38754,8 +38754,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetYLevel: 6.15
-  TimeToRise: 60
-  waveAmplitude: 0.1
+  TimeToRise: 30
+  waveAmplitude: 0
   waveSpeed: 1
   waveFrequency: 1
 --- !u!212 &920107217
@@ -41022,11 +41022,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 911c7dd5b2fa1524585e48441b25dceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  announceFinish: 0
-  <CommandingScript>k__BackingField: {fileID: 0}
-  scriptName: 
-  StopWhenReached: 0
-  TargetTime: 0
+  _water: {fileID: 920107216}
+  TimeToRise: 0
 --- !u!114 &1759495750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42936,7 +42933,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2462388597812466604, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
       propertyPath: <JumpForce>k__BackingField
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 216235518966596416, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
       propertyPath: m_Constraints
@@ -42956,11 +42953,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 472800358689710309, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.4501
+      value: -0.82
       objectReference: {fileID: 0}
     - target: {fileID: 472800358689710309, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.6338
+      value: 21.13
       objectReference: {fileID: 0}
     - target: {fileID: 472800358689710309, guid: 0babb80ad8945e545a7a872a748e555f, type: 3}
       propertyPath: m_LocalPosition.z

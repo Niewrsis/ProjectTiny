@@ -17,8 +17,8 @@ public class NewBehaviourScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update()   
     {
-        text.text = gameTimer.CurrentTime.ToString();
+        text.text = gameTimer.TimeToRise.ToString();
     }
 }
