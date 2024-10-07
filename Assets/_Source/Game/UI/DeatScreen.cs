@@ -14,6 +14,7 @@ public class DeatScreen : MonoBehaviour
 
     public void GoToMenu()
     {
+        Destroy(GameObject.Find("music player")); // hope that nobody renamed the music player in the first scene into something else
         SceneManager.LoadScene("TitleMenu");
     }
 } 
