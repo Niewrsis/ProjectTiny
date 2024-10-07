@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Presentation/Scenes/Scene2.unity
     guid: 4d3c1ad5a60b75546acc0e45a0df1dd8
+  - enabled: 1
+    path: Assets/_Presentation/Scenes/ThxForPlaying.unity
+    guid: 01a5d2c1014f455449f4b60d1e58453d
   m_configObjects: {}
