@@ -14,6 +14,6 @@ public class DeatScreen : MonoBehaviour
 
     public void GoToMenu()
     {
-        SceneManager.LoadScene("TitleScreen");
+        SceneManager.LoadScene("TitleMenu");
     }
-}
+} 
