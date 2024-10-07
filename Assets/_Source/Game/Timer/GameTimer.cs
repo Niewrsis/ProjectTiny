@@ -16,19 +16,20 @@ namespace Game.GameTimer
 
         public float CurrentTime => _time;
         public bool StopWhenReached = false;
+        private bool _stop;
         public float TargetTime = 0;
         void Update()
         {
-            if (!StopWhenReached)
+            if (StopWhenReached && !_stop)
             {
                 _time += Time.deltaTime;
                 if (_time > TargetTime) 
                 {
-                    StopWhenReached = true;
+                    _stop = true;
                     if (announceFinish)
                     {
                         CommandingScript.Invoke(scriptName, 0);
-                        StopWhenReached = true;
+                        _stop = true;
                     }
                 }
             }

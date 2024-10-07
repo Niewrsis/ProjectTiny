@@ -46,12 +46,20 @@ namespace Game.InputSystem
         private void ReadMoveInputs()
         {
             _isMoving = false;
+            float xMove = Input.GetAxis("Horizontal");
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
             {
                 _isMoving = true;
+                if (xMove > 0)
+                {
+                    _playerCopy.PlayerSR.flipX = false;
+                } else
+                {
+                    _playerCopy.PlayerSR.flipX = true;
+                }
             }
-            float xMove = Input.GetAxis("Horizontal");
             _playerInvoker.InvokeMove(xMove, _isMoving);
+
         }
         private void ReadJumpInput()
         {
@@ -68,15 +76,26 @@ namespace Game.InputSystem
             if (Input.GetKeyDown(KeyCode.F))
             {
                 _playerInvoker.InvokeChangeForm(playerFormView);
-                if (player.FormID == 2)
+                BoxCollider2D boxCollider2D = _playerCopy.GetComponent<BoxCollider2D>();
+                switch (player.FormID)
                 {
-                    // TODO player hitbox collider is split by half
+                    // sjit is fuck but fuck is balls
+                    // in other words, we only have today to finish everything
+                    case 0:
+                        boxCollider2D.size = new Vector2(2.35f, 2.35f); // too big for vect3 1 1 1, so no jumping lol
+                        break;
+                    case 1:
+                        boxCollider2D.size = new Vector2(1.35f, 1.9f); // doublejump, so make small enuff to actually be grounded
+                        break;
+                    case 2:
+                        boxCollider2D.size = new Vector2(1, 1.3f); 
+                        break;
                 }
             }
         }
         private bool IsGrounded(Rigidbody2D rb, Transform transform)
         {
-            float rayDistance = transform.localScale.y/2 + 0.05f;
+            float rayDistance = transform.localScale.y;
 
             RaycastHit2D hit = Physics2D.Raycast(rb.position, Vector2.down, rayDistance, LayerMask.GetMask("Ground"));
 
