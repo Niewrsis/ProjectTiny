@@ -1,12 +1,11 @@
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 
 namespace Game.PlayerSystem.View
 {
     public class PlayerFormChangingView : MonoBehaviour
     {
-        [SerializeField] private List<AnimatorController> _formAnimations;
+        [SerializeField] private List<RuntimeAnimatorController> _formAnimations;
 
         public void ChangeForm(int formID, Animator playerAnimator)
         {
@@ -24,7 +23,7 @@ namespace Game.PlayerSystem.View
             }
             else
             {
-                Debug.LogError("playerSprite is null");
+                Debug.LogError("playerAnimator is null");
             }
         }
     }
