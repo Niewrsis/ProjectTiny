@@ -16,8 +16,8 @@ public class TitleScreenUI : MonoBehaviour
 
 
     private UIEffect BackgroundsEffect;
-    private Slider SoundVolumeSlider;
-    private Slider MusicVolumeSlider;
+    public Slider SoundVolumeSlider;
+    public Slider MusicVolumeSlider;
 
     public void StartGame() 
     {

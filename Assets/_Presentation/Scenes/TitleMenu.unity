@@ -207,6 +207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 277862822}
   - component: {fileID: 277862821}
+  - component: {fileID: 277862823}
   m_Layer: 0
   m_Name: music jere please finisj me
   m_TagString: Untagged
@@ -325,6 +326,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &277862823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277862820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 481e8ae4dda557b45aef3a042d9216c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicobject: {fileID: 277862820}
+  follow: 0
 --- !u!1 &413302466
 GameObject:
   m_ObjectHideFlags: 0
@@ -2532,8 +2547,10 @@ MonoBehaviour:
   TitleScreen: {fileID: 777509842}
   SettingsScreen: {fileID: 1701733148}
   TheBackgroundImage: {fileID: 836233213}
-  SoundVolumeGameObj: {fileID: 767103048}
-  MusicVolumeGameObj: {fileID: 1139290427}
+  SoundVolumeGameObj: {fileID: 1139290427}
+  MusicVolumeGameObj: {fileID: 767103048}
+  SoundVolumeSlider: {fileID: 0}
+  MusicVolumeSlider: {fileID: 0}
 --- !u!1 &1980260554
 GameObject:
   m_ObjectHideFlags: 0
