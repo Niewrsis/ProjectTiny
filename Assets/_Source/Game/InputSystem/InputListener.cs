@@ -25,12 +25,20 @@ namespace Game.InputSystem
         }
         private void Update()
         {
+            if ( _playerCopy.IsDead)
+            {
+                return;
+            }
             ReadChangeFormInput();
             ReadJumpInput();
             ReadJumpDownInput();
         }
         private void FixedUpdate()
         {
+            if (_playerCopy.IsDead)
+            {
+                return;
+            }
             ReadMoveInputs();
         }
         private void ReadJumpDownInput()
