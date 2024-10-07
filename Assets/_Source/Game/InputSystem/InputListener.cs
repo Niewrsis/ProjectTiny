@@ -41,6 +41,7 @@ namespace Game.InputSystem
             {
                 return;
             }
+            if (IsGrounded()) _playerCopy.JumpAmounts = 0;
             ReadMoveInputs();
         }
         private void ReadJumpDownInput()
@@ -77,9 +78,14 @@ namespace Game.InputSystem
         {
             // if (player.FormID == 0  || player.FormID == 2) return;
 
-            if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+            if (Input.GetKeyDown(KeyCode.Space) && 
+                (
+                    IsGrounded() || 
+                    (_playerCopy.FormID == 1 && _playerCopy.JumpAmounts < 2))
+                )
             {
-                    _playerInvoker.InvokeJump();
+                _playerInvoker.InvokeJump();
+                _playerCopy.JumpAmounts++;
             }
         }
         private void ReadChangeFormInput()
