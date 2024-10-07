@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <MovementSpeed>k__BackingField: 5
-  <JumpForce>k__BackingField: 10
+  <JumpForce>k__BackingField: 8
   FormID: 0
   JumpAmounts: 0
   isTryingToJumpDown: 0

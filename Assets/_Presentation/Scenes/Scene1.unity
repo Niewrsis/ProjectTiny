@@ -41595,11 +41595,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 911c7dd5b2fa1524585e48441b25dceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  announceFinish: 0
-  <CommandingScript>k__BackingField: {fileID: 0}
-  scriptName: 
-  StopWhenReached: 0
-  TargetTime: 0
+  _water: {fileID: 0}
+  TimeToRise: 0
 --- !u!114 &1759495750
 MonoBehaviour:
   m_ObjectHideFlags: 0
