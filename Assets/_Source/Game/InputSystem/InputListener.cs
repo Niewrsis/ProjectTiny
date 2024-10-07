@@ -25,7 +25,7 @@ namespace Game.InputSystem
         }
         private void Update()
         {
-            if ( _playerCopy.IsDead)
+            if (_playerCopy.IsDead)
             {
                 return;
             }
@@ -45,7 +45,7 @@ namespace Game.InputSystem
         {
             if (Input.GetKey(KeyCode.S))
             {
-            _playerInvoker.InvokeJumpDown(player);
+                _playerInvoker.InvokeJumpDown(player);
             } else
             {
                 _playerCopy.isTryingToJumpDown = false; // todo either make it better or just forget about it and cry aobut it later
@@ -71,13 +71,11 @@ namespace Game.InputSystem
         }
         private void ReadJumpInput()
         {
-            if (player.FormID == 0) return;
-            if (IsGrounded(_playerCopy.Rb, _playerCopy.Transform) || (player.JumpAmounts < 2 && player.FormID == 1))
+            if (player.FormID == 0  || player.FormID == 2) return;
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && IsGrounded(player.Rb, player.Transform))
             {
                     _playerInvoker.InvokeJump();
-                    player.JumpAmounts++;
             }
         }
         private void ReadChangeFormInput()
