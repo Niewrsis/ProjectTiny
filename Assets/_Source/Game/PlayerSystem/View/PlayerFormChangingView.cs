@@ -1,19 +1,20 @@
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 namespace Game.PlayerSystem.View
 {
     public class PlayerFormChangingView : MonoBehaviour
     {
-        [SerializeField] private List<Sprite> _formSprites;
+        [SerializeField] private List<AnimatorController> _formAnimations;
 
-        public void ChangeForm(int formID, SpriteRenderer playerSprite)
+        public void ChangeForm(int formID, Animator playerAnimator)
         {
-            if (playerSprite != null)
+            if (playerAnimator != null)
             {
-                if (formID >= 0 && formID < _formSprites.Count)
+                if (formID >= 0 && formID < _formAnimations.Count)
                 {
-                    playerSprite.sprite = _formSprites[formID];
+                    playerAnimator.runtimeAnimatorController = _formAnimations[formID];
                     Debug.Log($"Form changed - {formID}");
                 }
                 else

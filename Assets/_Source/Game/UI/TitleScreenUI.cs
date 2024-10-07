@@ -19,6 +19,16 @@ public class TitleScreenUI : MonoBehaviour
     public Slider SoundVolumeSlider;
     public Slider MusicVolumeSlider;
 
+    private void Start()
+    {
+        BackgroundsEffect = TheBackgroundImage.GetComponent<UIEffect>();
+        SoundVolumeSlider = SoundVolumeGameObj.GetComponent<Slider>();
+        MusicVolumeSlider = MusicVolumeGameObj.GetComponent<Slider>();
+
+        MusicVolumeSlider.value = PlayerPrefs.GetFloat("mus_volume");
+        SoundVolumeSlider.value = PlayerPrefs.GetFloat("sfx_volume");
+    }
+
     public void StartGame() 
     {
         SceneManager.LoadScene("Scene1");
@@ -39,9 +49,6 @@ public class TitleScreenUI : MonoBehaviour
 
     public void SettingsToggled(bool amISettings)
     {
-        BackgroundsEffect = TheBackgroundImage.GetComponent<UIEffect>();
-        SoundVolumeSlider = SoundVolumeGameObj.GetComponent<Slider>();
-        MusicVolumeSlider = MusicVolumeGameObj.GetComponent<Slider>();
         if (amISettings)
         {
             TitleScreen.SetActive(false);
@@ -58,5 +65,18 @@ public class TitleScreenUI : MonoBehaviour
         PlayerPrefs.SetFloat("mus_volume", MusicVolumeSlider.value);
         PlayerPrefs.Save();
         // TODO implement volume manager IN GAME.
+    }
+
+    public void ChangeVolume(bool music)
+    {
+        if (music) 
+        { 
+            PlayerPrefs.SetFloat("mus_volume", MusicVolumeSlider.value);
+        } else 
+        { 
+            PlayerPrefs.SetFloat("sfx_volume", SoundVolumeSlider.value);
+        }
+
+        PlayerPrefs.Save();
     }
 }

@@ -7,7 +7,7 @@ namespace Game.PlayerSystem
     {
         private PlayerFormChangingView _formView;
 
-        public void ChangeNextForm(SpriteRenderer playerSprite, Player player, PlayerFormChangingView playerFormView)
+        public void ChangeNextForm(Animator playerSprite, Player player, PlayerFormChangingView playerFormView)
         {
             _formView = playerFormView;
             if (player.FormID == 2)

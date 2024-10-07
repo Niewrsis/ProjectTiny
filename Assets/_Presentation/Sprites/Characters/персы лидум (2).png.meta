@@ -97,34 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u043F\u0435\u0440\u0441\u044B \u043B\u0438\u0434\u0443\u043C (2)_0"
-      rect:
-        serializedVersion: 2
-        x: 103
-        y: 450
-        width: 1146
-        height: 1057
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bdb2a0223bee0314e9c88e8617078816
-      internalID: -587651253
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: "\u043F\u0435\u0440\u0441\u044B \u043B\u0438\u0434\u0443\u043C (2)_1"
       rect:
         serializedVersion: 2
-        x: 1328
-        y: 468
-        width: 511
-        height: 991
+        x: 94
+        y: 459
+        width: 1146
+        height: 1057
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,10 +121,10 @@ TextureImporter:
       name: "\u043F\u0435\u0440\u0441\u044B \u043B\u0438\u0434\u0443\u043C (2)_2"
       rect:
         serializedVersion: 2
-        x: 1888
-        y: 525
-        width: 8
-        height: 6
+        x: 1365
+        y: 468
+        width: 509
+        height: 991
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,7 +142,28 @@ TextureImporter:
       name: "\u043F\u0435\u0440\u0441\u044B \u043B\u0438\u0434\u0443\u043C (2)_3"
       rect:
         serializedVersion: 2
-        x: 1964
+        x: 1308
+        y: 525
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96ae6dd94af3e0c4eb34729f4faf4093
+      internalID: 684109523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u043F\u0435\u0440\u0441\u044B \u043B\u0438\u0434\u0443\u043C (2)_4"
+      rect:
+        serializedVersion: 2
+        x: 1975
         y: 465
         width: 280
         height: 443
@@ -174,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96ae6dd94af3e0c4eb34729f4faf4093
-      internalID: 684109523
+      spriteID: 5199b81cc4140fb4db4fa3deb628b458
+      internalID: -1036988833
       vertices: []
       indices: 
       edges: []
@@ -195,6 +195,7 @@ TextureImporter:
       "\u043F\u0435\u0440\u0441\u044B \u043B\u0438\u0434\u0443\u043C (2)_1": 1694412191
       "\u043F\u0435\u0440\u0441\u044B \u043B\u0438\u0434\u0443\u043C (2)_2": 1224902248
       "\u043F\u0435\u0440\u0441\u044B \u043B\u0438\u0434\u0443\u043C (2)_3": 684109523
+      "\u043F\u0435\u0440\u0441\u044B \u043B\u0438\u0434\u0443\u043C (2)_4": -1036988833
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

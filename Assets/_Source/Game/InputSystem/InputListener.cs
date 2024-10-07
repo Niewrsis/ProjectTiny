@@ -57,15 +57,16 @@ namespace Game.InputSystem
         {
             _isMoving = false;
             float xMove = Input.GetAxis("Horizontal");
+            _playerCopy.Anim.SetFloat("horizontalSpeed", Mathf.Abs(_playerCopy.Rb.velocity.x));
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
             {
                 _isMoving = true;
                 if (xMove > 0)
                 {
-                    _playerCopy.PlayerSR.flipX = false;
+                    _playerCopy.PlayerSR.flipX = true;
                 } else
                 {
-                    _playerCopy.PlayerSR.flipX = true;
+                    _playerCopy.PlayerSR.flipX = false;
                 }
             }
             _playerInvoker.InvokeMove(xMove, _isMoving);
@@ -97,7 +98,7 @@ namespace Game.InputSystem
                         boxCollider2D.size = new Vector2(1.35f, 1.9f); // doublejump, so make small enuff to actually be grounded
                         break;
                     case 2:
-                        boxCollider2D.size = new Vector2(1, 1.3f); 
+                        boxCollider2D.size = new Vector2(.6f, .95f); 
                         break;
                 }
             }

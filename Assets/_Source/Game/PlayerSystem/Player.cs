@@ -15,9 +15,12 @@ namespace Game.PlayerSystem
         [HideInInspector] public bool isTryingToJumpDown;
         [HideInInspector] public bool IsDead;
 
+        private Animator _anim;
         private Rigidbody2D _rb;
         private Transform _transform;
         private SpriteRenderer _playerSR;
+
+        public Animator Anim => _anim;
         public Rigidbody2D Rb => _rb;
         public Transform Transform => _transform;
         public SpriteRenderer PlayerSR => _playerSR;
@@ -26,6 +29,7 @@ namespace Game.PlayerSystem
             _playerSR = GetComponent<SpriteRenderer>();
             _transform = GetComponent<Transform>();
             _rb = GetComponent<Rigidbody2D>();
+            _anim = GetComponent<Animator>();
         }
 
         public void DIE()

@@ -25,7 +25,7 @@ namespace Game.PlayerSystem
         }
         public void InvokeChangeForm(PlayerFormChangingView playerFormView)
         {
-            _playerForm.ChangeNextForm(_player.PlayerSR, _player, playerFormView);
+            _playerForm.ChangeNextForm(_player.Anim, _player, playerFormView);
         }
         public void InvokeJumpDown(Player player)
         {
