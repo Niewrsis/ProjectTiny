@@ -8,7 +8,6 @@ namespace Game.PlayerSystem
     {
         public bool IsPlayerGrounded;
         private void OnTriggerEnter2D(Collider2D collision)
-        {
             if (collision != null)
             {
                 IsPlayerGrounded = true;
