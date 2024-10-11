@@ -2536,19 +2536,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2757a514af5bbcd4ab2362de4a9c8834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerType: GlobalActionButtonTrigger
-  trigger:
-    global: 0
+  triggerType: AlwaysRunTrigger
   oneTimeUse: 0
   usedOnce: 0
   playerList: []
   lastPlayer: {fileID: 0}
   events:
-  - {fileID: 11400000, guid: 5d559334f461d414094c3fe5a6e03827, type: 2}
+  - {fileID: 11400000, guid: 676ebd41319d05f4a966cd6dd426c014, type: 2}
   - {fileID: 11400000, guid: e522615d11fbe48449ffcdfd21a5afa6, type: 2}
-  - {fileID: 11400000, guid: 5d559334f461d414094c3fe5a6e03827, type: 2}
+  - {fileID: 11400000, guid: 676ebd41319d05f4a966cd6dd426c014, type: 2}
   - {fileID: 11400000, guid: d7af70943223d7f4187c76a3a508cab1, type: 2}
+  - {fileID: 11400000, guid: 676ebd41319d05f4a966cd6dd426c014, type: 2}
   - {fileID: 11400000, guid: 0f5eb6c4fca25374fb324c599e3fbe0c, type: 2}
+  currentEvent: {fileID: 0}
 --- !u!4 &1180406007
 Transform:
   m_ObjectHideFlags: 0

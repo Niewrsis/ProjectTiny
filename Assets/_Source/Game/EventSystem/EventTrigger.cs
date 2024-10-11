@@ -33,6 +33,7 @@ public class EventTrigger : MonoBehaviour
         "\nMaybe something like... SceneName/Events/StupidEventThatBreaksEveryOtherTime." +
         "\nOr don't. It won't be my mess to untangle after this...")]
     public List<Event> events = new();
+    public Event currentEvent;
 
     private void Start()
     {
@@ -90,28 +91,18 @@ public class EventTrigger : MonoBehaviour
     // TODO implement better! NOW.
     private void LateUpdate()
     {
-        if (usedOnce) return;
+        if (oneTimeUse && usedOnce) return;
 
-        if (trigger.global == false)
+        if (playerList.Count > 0)
         {
-            if (playerList.Count > 0)
+            foreach (GameObject player in playerList)
             {
-                foreach (GameObject player in playerList)
+                if (trigger.ShouldTrigger(this, player))
                 {
-                    if (trigger.ShouldTrigger(this, player))
-                    {
-                        // this is bad. time to move on and make even more mistakes
-                        TriggerEvents(player.GetComponentInParent<Player>());
-                    }
-
+                    // this is bad. time to move on and make even more mistakes
+                    TriggerEvents(player.GetComponentInParent<Player>());
                 }
-            }
-        } else
-        {
-            GameObject player = lastPlayer;
-            if (trigger.ShouldTrigger(this, player))
-            {
-                TriggerEvents(player.GetComponentInParent<Player>());
+
             }
         }
     }
@@ -120,23 +111,49 @@ public class EventTrigger : MonoBehaviour
     {
         if (busyExecuting) return;
         SetBusy(true);
+        ResetEvents();  // holy shit nevermind i'm starting to hate scriptable objects
         StartCoroutine(ExecuteEvents(player));
+    }
+
+    private void ResetEvents()
+    {
+        foreach (Event e in events)
+        {
+            e.eventIsBusy = false;
+        }
     }
 
     private IEnumerator ExecuteEvents(Player player)
     {
+        Debug.Log("start");
         for (int ticker = 0; ticker < events.Count; ticker++)
         {
-            Event e = events[ticker];
-            if (e != null)
+            Event currentEvent = events[ticker];
+            this.currentEvent = currentEvent;
+            if (currentEvent != null)
             {
-                if (!e.eventIsBusy)
+                // Check if the previous event is busy
+                if (ticker > 0 && events[ticker - 1].eventIsBusy)
                 {
-                    e.Execute(this, player);
+                    // If the previous event is busy, wait until it is not busy
+                    while (events[ticker - 1].eventIsBusy)
+                    {
+                        yield return null;
+                    }
+                }
+
+                if (!currentEvent.eventIsBusy)
+                {
+                    currentEvent.Execute(this, player);
                 }
                 else
                 {
-                    yield return null;
+                    // If the current event is busy, wait until it is not busy
+                    while (currentEvent.eventIsBusy)
+                    {
+                        yield return null;
+                    }
+                    // Decrement the ticker to ensure we don't skip the current event
                     if (ticker > 0)
                     {
                         ticker--;
@@ -146,8 +163,10 @@ public class EventTrigger : MonoBehaviour
         }
         SetBusy(false);
         if (oneTimeUse) usedOnce = true;
+        Debug.Log("end");
         yield break;
     }
+
 
     internal bool IsPlayerTouching(GameObject player)
     {

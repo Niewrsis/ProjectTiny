@@ -22,7 +22,6 @@ namespace Triggers
     [System.Serializable]
     public class Trigger
     {
-        public bool global = false;
         public virtual bool ShouldTrigger(EventTrigger eventTrigger, GameObject player) {
             // never trigger, as this isn't really supposed to be used. whoever does can eat a walnut.
             Debug.Log("Default, functionless trigger has been initiated.");
@@ -34,19 +33,17 @@ namespace Triggers
     {
         private static readonly Dictionary<string, Type> triggerTypesByName = new Dictionary<string, Type>
         {
-            { nameof(PlayerAndActionButtonTrigger), typeof(PlayerAndActionButtonTrigger) },
+            { nameof(ActionButtonTrigger), typeof(ActionButtonTrigger) },
             { nameof(PlayerTouchTrigger), typeof(PlayerTouchTrigger) },
             { nameof(AlwaysRunTrigger), typeof(AlwaysRunTrigger) },
-            { nameof(GlobalActionButtonTrigger), typeof(GlobalActionButtonTrigger) },
             { nameof(NeverRunTrigger), typeof(NeverRunTrigger) }
         };
 
         private static readonly Dictionary<int, Type> triggerTypesByID = new Dictionary<int, Type>
         {
-            { (int)TriggerType.PlayerAndActionButtonTrigger, typeof(PlayerAndActionButtonTrigger) },
+            { (int)TriggerType.PlayerAndActionButtonTrigger, typeof(ActionButtonTrigger) },
             { (int)TriggerType.PlayerTouchTrigger, typeof(PlayerTouchTrigger) },
             { (int)TriggerType.AlwaysRunTrigger, typeof(AlwaysRunTrigger) },
-            { (int)TriggerType.GlobalActionButtonTrigger, typeof(GlobalActionButtonTrigger) },
             { (int)TriggerType.NeverRunTrigger, typeof(NeverRunTrigger) }
         };
 
@@ -76,12 +73,11 @@ namespace Triggers
             PlayerTouchTrigger = 2,
             AlwaysRunTrigger = 3,
             NeverRunTrigger = 4,
-            GlobalActionButtonTrigger = 5,
             // and so on.
         }
     }
 
-    public class PlayerAndActionButtonTrigger : Trigger
+    public class ActionButtonTrigger : Trigger
     {
         public override bool ShouldTrigger(EventTrigger eventTrigger, GameObject player)
         {
@@ -102,18 +98,6 @@ namespace Triggers
             // actually wants to interact with the thing. it took me too long
 
             return test2 && test4 && test5;
-        }
-    }
-
-    public class GlobalActionButtonTrigger : Trigger
-    {
-        public new bool global = true;
-        public override bool ShouldTrigger(EventTrigger eventTrigger, GameObject player)
-        {
-            bool test1 = Input.GetKeyDown(KeyCode.E); 
-            // player isn't really needed here...
-
-            return test1;
         }
     }
 
