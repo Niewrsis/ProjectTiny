@@ -25,6 +25,7 @@ public class EventTrigger : MonoBehaviour
 
     [Tooltip("Player List. You better hope inside are players, because otherwise there'll be a ton of LogErrors.")]
     public List<GameObject> playerList;
+    public GameObject lastPlayer;
 
     [Tooltip("Event List. It will go through the events, and execute one by one. You know, like code?" +
         "\n\nCreate new Events via right click (if all is set up correctly), shove values as needed and hope they work!" +
@@ -50,6 +51,7 @@ public class EventTrigger : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             playerList.Add(collision.gameObject);
+            lastPlayer = collision.gameObject;
         }
     }
 
@@ -58,6 +60,7 @@ public class EventTrigger : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             playerList.Add(collision.gameObject);
+            lastPlayer = collision.gameObject;
         }
     }
     // end ENTERS
@@ -69,6 +72,7 @@ public class EventTrigger : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             playerList.Remove(collision.gameObject);
+            lastPlayer = null;
         }
     }
 
@@ -77,6 +81,7 @@ public class EventTrigger : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             playerList.Remove(collision.gameObject);
+            lastPlayer = null;
         }
         
     }
@@ -85,16 +90,28 @@ public class EventTrigger : MonoBehaviour
     // TODO implement better! NOW.
     private void LateUpdate()
     {
-        if (playerList.Count > 0)
-        {
-            foreach (GameObject player in playerList)
-            {
-                if (trigger.ShouldTrigger(this, player) && !usedOnce)
-                {
-                    // this is bad. time to move on and make even more mistakes
-                    TriggerEvents(player.GetComponentInParent<Player>());
-                }
+        if (usedOnce) return;
 
+        if (trigger.global == false)
+        {
+            if (playerList.Count > 0)
+            {
+                foreach (GameObject player in playerList)
+                {
+                    if (trigger.ShouldTrigger(this, player))
+                    {
+                        // this is bad. time to move on and make even more mistakes
+                        TriggerEvents(player.GetComponentInParent<Player>());
+                    }
+
+                }
+            }
+        } else
+        {
+            GameObject player = lastPlayer;
+            if (trigger.ShouldTrigger(this, player))
+            {
+                TriggerEvents(player.GetComponentInParent<Player>());
             }
         }
     }
