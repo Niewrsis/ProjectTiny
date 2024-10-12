@@ -11,6 +11,7 @@ public class PlatformController : MonoBehaviour
             
     public CompositeCollider2D compositeCollider;
     public bool isPlayerCollisionIgnored = false;
+    public bool playerInsideMe = false;
 
     private void Start()
     {
@@ -28,8 +29,7 @@ public class PlatformController : MonoBehaviour
     }
 
     public void PlayerIsInsideOfMe(GameObject player)
-    {   
-        // ...<Object>(...) is unnecessary in t'is case, but just in case.
+    {
         if (!player.TryGetComponent<Rigidbody2D>(out Rigidbody2D playerRigidbody))
         {
             return;
@@ -37,17 +37,22 @@ public class PlatformController : MonoBehaviour
 
         Player playerController = player.GetComponent<Player>();
 
-        // honestly i think this will all break once we make it >1 player.
-        // it could work fine if there will be multiple platforms
-        if (playerRigidbody.velocity.y >= 0.5f || playerController.isTryingToJumpDown)
+        bool isFallingThrough = playerRigidbody.velocity.y < 0.2f && playerController.isTryingToJumpDown;
+
+        bool isJumpingThrough = playerRigidbody.velocity.y >= 0.5f && !playerController.isTryingToJumpDown;
+
+        if (isFallingThrough || isJumpingThrough)
         {
             IgnorePlayerCollision();
+            playerInsideMe = true;
         }
         else
         {
             RestorePlayerCollision();
+            playerInsideMe = false;
         }
     }
+
 
     public void IgnorePlayerCollision()
     {

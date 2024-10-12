@@ -151,7 +151,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4e9cac25a6b586f46a280dde03e3a93a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -180,6 +180,8 @@ MonoBehaviour:
   JumpAmounts: 0
   isTryingToJumpDown: 0
   IsDead: 0
+  DefaultMaterial: {fileID: 6200000, guid: a7bf4ce965746a1419e155a4b0e41ccc, type: 2}
+  SlipOffWalls: {fileID: 6200000, guid: 4e9cac25a6b586f46a280dde03e3a93a, type: 2}
 --- !u!114 &7661974692743596627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,8 +243,8 @@ Transform:
   m_GameObject: {fileID: 7956132101223737986}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2, y: -0.958, z: 0}
-  m_LocalScale: {x: 0.65, y: 0.4, z: 1}
+  m_LocalPosition: {x: -0.08, y: -0.958, z: 0}
+  m_LocalScale: {x: 0.7996219, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 472800358689710309}

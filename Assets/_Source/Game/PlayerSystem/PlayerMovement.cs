@@ -11,6 +11,7 @@ namespace Game.PlayerSystem
         }
         public void Jump(Rigidbody2D rb, float jumpForce)
         {
+            rb.velocity = Vector2.zero;
             rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
         }
         public void JumpDown(Player player)

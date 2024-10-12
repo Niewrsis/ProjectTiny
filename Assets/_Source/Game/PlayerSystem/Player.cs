@@ -15,6 +15,9 @@ namespace Game.PlayerSystem
         [HideInInspector] public bool isTryingToJumpDown;
         [HideInInspector] public bool IsDead;
 
+        public PhysicsMaterial2D DefaultMaterial;
+        public PhysicsMaterial2D SlipOffWalls;
+
         private Animator _anim;
         private Rigidbody2D _rb;
         private Transform _transform;

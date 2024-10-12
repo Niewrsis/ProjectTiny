@@ -16,6 +16,8 @@ namespace Game.InputSystem
         private bool _isGround;
         private bool _isMoving;
 
+        private Vector2 oldPos;
+
         private void Awake()
         {
             _playerInvoker = new(player);
@@ -41,7 +43,13 @@ namespace Game.InputSystem
             {
                 return;
             }
-            if (IsGrounded()) _playerCopy.JumpAmounts = 0;
+            if (IsGrounded()) {
+                _playerCopy.JumpAmounts = 0;
+                _playerCopy.Rb.sharedMaterial = player.DefaultMaterial;
+            } else
+            {
+                _playerCopy.Rb.sharedMaterial = player.SlipOffWalls;
+            };
             ReadMoveInputs();
         }
         private void ReadJumpDownInput()
@@ -81,7 +89,7 @@ namespace Game.InputSystem
             if (Input.GetKeyDown(KeyCode.Space) && 
                 (
                     IsGrounded() || 
-                    (_playerCopy.FormID == 1 && _playerCopy.JumpAmounts < 2))
+                    (_playerCopy.FormID == 1 && _playerCopy.JumpAmounts < 1))
                 )
             {
                 _playerInvoker.InvokeJump();
